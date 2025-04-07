@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace vétérinaire - Zoo Arcadia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/dashboard.css">
+  <link rel="stylesheet" href="../../css/veterinairespace.css">
+</head>
+
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fa-solid fa-paw"></i> Zoo Arcadia</h2>
+      </div>
+      <div class="user-info" id="userInfo">
+        <!-- Chargé dynamiquement -->
+      </div>
+      <nav class="sidebar-nav">
+        <a href="veterinaire.html"><i class="fa-solid fa-file-medical fa-icon"></i> Rapports vétos</a>
+        <a href="veto-commentaires.html"><i class="fa-solid fa-comment-dots fa-icon"></i> Commentaires</a>
+        <a href="veto-consommation.html"><i class="fa-solid fa-bowl-food fa-icon"></i> Consommations</a>
+      </nav>
+      <div class="logout">
+        <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-icon"></i>Déconnexion</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="headers">
+        <h1><i class="fa-solid fa-house fa-icon"></i> Tableau de Bord Vétérinaire</h1>
+        <div class="admin-icons">
+          <div class="icon-wrapper">
+            <button id="toggleFormBtn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="admin-form-container" id="formContainer">
+        <section class="admin-form">
+          <h2>Créer un rapport vétérinaire</h2>
+          <form id="rapportForm">
+            <select name="animal_id" id="animalChoice" required>
+              <option value="">-- Choisir un animal --</option>
+            </select>
+
+            <input type="text" name="etat" id="etat" placeholder="État de santé" required>
+            <input type="text" name="nourriture" id="nourriture" placeholder="Nourriture donnée" required>
+            <input type="number" step="0.01" name="grammage" id="grammage" placeholder="Grammage (kg)" required>
+
+            <textarea name="detail" id="detail" rows="4" placeholder="Observations vétérinaires..." required></textarea>
+
+            <button type="submit">Enregistrer le rapport</button>
+          </form>
+        </section>
+      </div>
+      <section class="historique-rapports">
+        <h2><i class="fa-solid fa-clock-rotate-left"></i> Historique des rapports</h2>
+        <div class="filter-container">
+          <div class="filter-select-group">
+            <select id="animalFilter">
+              <option value="">Tous les animaux</option>
+            </select>
+            <input type="date" id="dateFilter">
+          </div>
+
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchReport" placeholder="Rechercher dans les observations...">
+            <button id="clearSearchReport"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+        <div class="rapport-list" id="rapportHistorique">
+          <!-- Rapports ajoutés dynamiquement ici -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="../../js/veto/veterinaireSpace.js"></script>
+  <script src="../../js/toggleformbtn.js"></script>
+  <script src="../../js/logout.js"></script>
+</body>
+
+</html>

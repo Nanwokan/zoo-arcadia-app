@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace employé - Zoo Arcadia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/employeSpace.css">
+</head>
+
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fa-solid fa-paw"></i> Zoo Arcadia</h2>
+      </div>
+      <div class="user-info" id="userInfo">
+      </div>
+      <nav class="sidebar-nav">
+        <a href="employe.html"><i class="fa-solid fa-house fa-icon"></i>Tableau de bord</a>
+        <a href="employe-nourriture.html"><i class="fa-solid fa-users fa-icon"></i> Consommation</a>
+      </nav>
+      <div class="logout">
+        <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-icon"></i>Déconnexion</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="headers">
+        <h1>Tableau de Bord</h1>
+        <div>
+          <button id="toggleFormBtn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="admin-form-container" id="formContainer">
+        <section class="admin-form">
+          <h2>Saisie de nourriture</h2>
+          <form id="foodLogForm" method="post" enctype="multipart/form-data">
+            <select id="animal_id" required>
+              <option value="">-- Sélectionner un animal --</option>
+              <!-- options dynamiques JS -->
+            </select>
+            <input type="text" id="nourriture" placeholder="Nourriture" required>
+            <input type="number" id="quantite" placeholder="Quantité (en Kg)" step="0.01" min="0" required>
+            <input type="date" id="date_don" required>
+            <input type="time" id="heure_don" required>
+            <button type="submit">Enregistrer</button>
+          </form>
+        </section>
+      </div>
+      <h2>Historique des consommations</h2>
+      <div class="filter-container">
+        <div class="filter-select-group">
+          <select id="animalFilter">
+            <option value="">Tous les animaux</option>
+          </select>
+          <input type="date" id="dateFilter">
+        </div>
+      </div>
+      <div id="foodHistory" class="rapport-grid">
+        <!-- cartes ou lignes dynamiques JS -->
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../../js/employe/employe-nourriture.js"></script>
+  <script src="../../js/logout.js"></script>
+</body>
+
+</html>

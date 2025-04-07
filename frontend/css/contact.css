@@ -1,0 +1,53 @@
+main {
+    background: url('../assets/image/hero/fond.png') no-repeat center/cover;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.contact-form-section {
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+    backdrop-filter: blur(15px); /* flou */
+    -webkit-backdrop-filter: blur(15px);
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin: 3rem auto;
+  }
+  
+  .contact-form-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form-section label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .contact-form-section input,
+  .contact-form-section textarea {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .contact-form-section button {
+    background-color: #007960;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form-section button:hover {
+    background-color: #005f49;
+  }

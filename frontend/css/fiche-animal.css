@@ -1,0 +1,136 @@
+/* === Conteneur principal === */
+.fiche-animal-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 8rem;
+    background-color: #f8f8f8;
+    justify-content: space-between;
+    max-height: 570px;
+  }
+  
+  /* === Partie image === */
+  .image-section {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  .main-image {
+    width: 100%;
+    max-width: 350px;
+    height: 320px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* === Miniatures === */
+  .thumbnail-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .thumbnail-gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.3s;
+  }
+  
+  .thumbnail-gallery img:hover {
+    transform: scale(1.05);
+    border-color: #0a4f77;
+  }
+  
+  /* === Partie infos === */
+  .animal-info {
+    flex: 1;
+    min-width: 700px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+  }
+  
+  .animal-info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0a4f77;
+  }
+  
+  .animal-info p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  .visit-button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #0a4f77;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .visit-button:hover {
+    background-color: #0971a5;
+  }
+  
+  /* === Rapports === */
+  .rapports {
+    background-color: #ffffff;
+  }
+  
+  .rapports h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #0a4f77;
+  }
+  
+  .rapport-list {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .rapport-card {
+    background-color: #f0f8ff;
+    border-left: 4px solid #0a4f77;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .rapport-card p {
+    margin: 0.3rem 0;
+    color: #333;
+  }
+  
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .fiche-animal-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .main-image {
+      max-width: 100%;
+    }
+  
+    .animal-info {
+      width: 100%;
+    }
+  }
+  

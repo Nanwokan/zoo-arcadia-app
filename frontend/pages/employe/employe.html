@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace employé - Zoo Arcadia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/employeSpace.css">
+  <link rel="stylesheet" href="../../css/upload.css">
+</head>
+
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fa-solid fa-paw"></i> Zoo Arcadia</h2>
+      </div>
+      <div class="user-info" id="userInfo">
+      </div>
+      <nav class="sidebar-nav">
+        <a href="employe.html"><i class="fa-solid fa-house fa-icon"></i>Tableau de bord</a>
+        <a href="employe-nourriture.html"><i class="fa-solid fa-users fa-icon"></i> Consommation</a>
+      </nav>
+      <div class="logout">
+        <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-icon"></i>Déconnexion</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="headers">
+        <h1>Tableau de Bord</h1>
+      </div>
+
+      <!-- Section Avis -->
+      <section id="avis-section" class="avis-section-container">
+        <section class="avis-valide">
+          <h3>Avis approuvés</h3>
+          <div class="list" id="avis-valides">
+            <!-- Avis validés dynamiques ici -->
+          </div>
+        </section>
+        <section class="avis-en-attente">
+          <h3>Avis en attente</h3>
+          <div class="list" id="avis-attente">
+            <!-- Avis en attente dynamiques ici -->
+          </div>
+        </section>
+      </section>
+      <!-- Formulaire d'édition d’un service -->
+      <section class="admin-form-container" id="formContainer" >
+        <section class="admin-form">
+          <h2>Modifier un service</h2>
+          <form id="editServiceForm" enctype="multipart/form-data">
+            <input type="text" id="nom" placeholder="Nom du service" required>
+            <textarea id="description" placeholder="Description" required></textarea>
+            <input type="file" id="image" accept="image/*">
+            <button type="submit">Sauvegarder</button>
+            <button type="button" class="cancelEdit" onclick="cancelEdit()">Annuler</button>
+          </form>
+        </section>
+      </section>
+
+      <!-- Liste des services -->
+      <h2>Liste des services</h2>
+      <div id="serviceList" class="admin-grid"></div>
+
+    </main>
+  </div>
+
+  <script src="../../js/employe/employe.js"></script>
+  <script src="../../js/logout.js"></script>
+</body>
+
+</html>

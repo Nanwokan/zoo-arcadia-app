@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gestion des utilisateurs - Zoo Arcadia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-paw"></i> Zoo Arcadia</h2>
+            </div>
+            <div class="user-info" id="userInfo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin.html"><i class="fa-solid fa-house fa-icon"></i> Tableau de bord</a>
+                <a href="admin-users.html"><i class="fa-solid fa-users fa-icon"></i> Utilisateurs</a>
+                <a href="admin-animals.html"><i class="fa-solid fa-hippo fa-icon"></i> Animaux</a>
+                <a href="admin-habitats.html"><i class="fa-solid fa-igloo fa-icon"></i> Habitats</a>
+                <a href="admin-services.html"><i class="fa-solid fa-bell-concierge fa-icon"></i> Services</a>
+                <a href="admin-rapports.html"><i class="fa-solid fa-shield-dog fa-icon"></i> Rapports vétos</a>
+            </nav>
+            <div class="logout">
+                <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-icon"></i>Déconnexion</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="headers">
+                <h1>Gestion des utilisateurs</h1>
+                <div class="admin-icons">
+                    <div class="icon-wrapper">
+                        <button id="toggleFormBtn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-form-container" id="formContainer">
+                <section class="admin-form">
+                    <h2>Creer un compte</h2>
+                    <form id="addUserForm" method="POST" enctype="multipart/form-data">
+                        <div class="form-inline-group">
+                            <div class="profile-upload">
+                                <input type="file" id="photo-profil" name="photo-profil" accept="image/*">
+                                <div class="profile-preview">
+                                    <img id="previewImage" src="assets/image/default-avatar.jpg" alt="Aperçu">
+                                    <label for="photo-profil" class="upload-btn">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <select name="roleChoice" id="roleChoice" required>
+                                <option value="">-- Choisir un rôle</option>
+                            </select>
+                        </div>
+                        <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+                        <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                        <input type="email" name="email" id="email" placeholder="Email" required>
+                        <input type="password" name="mot_de_passe" id="" placeholder="Mot de passe" required>
+                        <input type="password" name="Comparaison_mot_de_passe" id=""
+                            placeholder="Entrer a nouveau le mot de passe" required>
+                        <button type="submit">Bienvenue nouvel Arcadien !</button>
+                    </form>
+                </section>
+            </div>
+            <h2>Comptes Actifs</h2>
+            <div class="filter-container">
+                <div class="filter-select-group">
+                    <select id="roleFilter">
+                        <option value="">Tous les rôles</option>
+                        <!-- options ajoutées dynamiquement -->
+                    </select>
+                </div>
+
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Rechercher par nom, prénom ou email...">
+                    <button id="clearSearch"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div id="usersList" class="user-grid">
+                <!-- Exemple de carte -->
+                <div class="user-card">
+                    <img src="assets/image/default-avatar.jpg" alt="Lion">
+                    <div class="content">
+                        <h3>Nanwokan Ouattara</h3>
+                        <div class="admin-actions">
+                            <button class="edit-password-only"><i class="fa-solid fa-lock"></i></button>
+                            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+                            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../../js/admin/adminspace.js"></script>
+    <script src="../../js/logout.js"></script>
+    <script src="../../js/toggleformbtn.js"></script>
+    <script src="../../js/admin/preview-photo-profil.js"></script>
+    <script src="../../js/admin/admin-users.js"></script>
+</body>
+
+</html>

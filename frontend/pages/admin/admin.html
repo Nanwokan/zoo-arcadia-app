@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord - Zoo Arcadia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/dashboard.css">
+  <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fa-solid fa-paw"></i> Zoo Arcadia</h2>
+      </div>
+      <div class="user-info" id="userInfo">
+      </div>
+      <nav class="sidebar-nav">
+        <a href="admin.html"><i class="fa-solid fa-house fa-icon"></i> Tableau de bord</a>
+        <a href="admin-users.html"><i class="fa-solid fa-users fa-icon"></i> Utilisateurs</a>
+        <a href="admin-animals.html"><i class="fa-solid fa-hippo fa-icon"></i> Animaux</a>
+        <a href="admin-habitats.html"><i class="fa-solid fa-igloo fa-icon"></i> Habitats</a>
+        <a href="admin-services.html"><i class="fa-solid fa-bell-concierge fa-icon"></i> Services</a>
+        <a href="admin-rapports.html"><i class="fa-solid fa-shield-dog fa-icon"></i> Rapports vétos</a>
+      </nav>
+      <div class="logout">
+        <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-icon"></i>Déconnexion</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="headers">
+        <h1>Tableau de Bord</h1>
+      </div>
+      <h2>Statistiques</h2>
+
+
+      <section id="statsContainer" class="stats-section">
+
+        <section class="admin-counters">
+          <div class="counter-box">
+            <h3><i class="fa-solid fa-paw"></i> Total Animaux</h3>
+            <p id="totalAnimaux">0</p>
+          </div>
+          <div class="counter-box">
+            <h3><i class="fa-solid fa-users"></i> Total Utilisateurs</h3>
+            <p id="totalUsers">0</p>
+          </div>
+          <div class="counter-box">
+            <h3><i class="fa-solid fa-user-tie"></i> Total Employés</h3>
+            <p id="totalEmployes">0</p>
+          </div>
+          <div class="counter-box">
+            <h3><i class="fa-solid fa-user-doctor"></i> Total Vétérinaires</h3>
+            <p id="totalVeto">0</p>
+          </div>
+          <div class="counter-box">
+            <h3><i class="fa-solid fa-chart-line"></i> Moy. Consultations</h3>
+            <p id="moyenneConsultations">0</p>
+          </div>
+          <div class="counter-box">
+            <h3><i class="fa-solid fa-notes-medical"></i> Total Rapports</h3>
+            <p id="totalRapports">0</p>
+          </div>
+        </section>
+
+      </section>
+      <section class="stats-section">
+        <section class="top-views">
+          <h2><i class="fa-solid fa-chart-bar"></i> Le Top 5 des animaux</h2>
+          <canvas id="viewsChart" width="400" height="300"></canvas>
+        </section>
+        <section class="habitat-distribution">
+          <h2><i class="fa-solid fa-chart-pie"></i> Répartition par habitat</h2>
+          <canvas id="habitatChart"></canvas>
+        </section>
+        <section class="hero-card">
+          <div class="hero-card-content">
+            <h3>Bienvenue au Zoo Arcadia</h3>
+            <p>Découvrez un monde fascinant où la nature s’épanouit. Notre zoo moderne offre une expérience unique de
+              connexion avec la faune dans un environnement préservé et respectueux.</p>
+            <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
+          </div>
+        </section>
+      </section>
+      <!-- Modal formulaire pour modifier le Hero -->
+      <div id="heroModal" class="modal">
+        <div class="modal-content">
+          <form id="heroForm" method="post" enctype="multipart/form-data">
+            <label for="heroTitle">Titre</label>
+            <input type="text" id="heroTitle" name="titre" required>
+
+            <label for="heroDesc">Description</label>
+            <textarea id="heroDesc" name="description" required></textarea>
+
+            <label for="heroImage">Image</label>
+            <input type="file" id="heroImage" name="image" accept="image/*">
+
+            <div class="modal-actions">
+              <button type="submit">Sauvegarder</button>
+              <button type="button" onclick="closeHeroModal()">Annuler</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="comment-hours-container">
+        <section class="comment">
+          <h3><i class="fa-solid fa-comments"></i> Commentaires récents sur les habitats</h3>
+          <div class="filter-container">
+            <div class="filter-select-group">
+              <select id="habitatFilter">
+                <option value="">Tous les habitats</option>
+              </select>
+              <input type="date" id="dateFilter">
+            </div>
+          </div>
+          <div id="adminCommentaires"></div>
+        </section>
+
+        <section class="horaire">
+          <h2><i class="fa-regular fa-clock"></i> Horaires d'ouverture</h2>
+          <form id="horaireForm">
+            <div class="horaire-group">
+              <label>Lundi</label>
+              <input type="time" name="lundi_ouverture" required>
+              <input type="time" name="lundi_fermeture" required>
+            </div>
+            <div class="horaire-group">
+              <label>Mardi</label>
+              <input type="time" name="mardi_ouverture" required>
+              <input type="time" name="mardi_fermeture" required>
+            </div>
+            <div class="horaire-group">
+              <label>Mercredi</label>
+              <input type="time" name="mercredi_ouverture" required>
+              <input type="time" name="mercredi_fermeture" required>
+            </div>
+            <div class="horaire-group">
+              <label>Jeudi</label>
+              <input type="time" name="jeudi_ouverture" required>
+              <input type="time" name="jeudi_fermeture" required>
+            </div>
+            <div class="horaire-group">
+              <label>Vendredi</label>
+              <input type="time" name="vendredi_ouverture" required>
+              <input type="time" name="vendredi_fermeture" required>
+            </div>
+            <div class="horaire-group">
+              <label>Samedi</label>
+              <input type="time" name="samedi_ouverture" required>
+              <input type="time" name="samedi_fermeture" required>
+            </div>
+            <div class="horaire-group">
+              <label>Dimanche</label>
+              <input type="time" name="dimanche_ouverture" required>
+              <input type="time" name="dimanche_fermeture" required>
+            </div>
+            <button type="submit">Enregistrer les horaires</button>
+          </form>
+
+        </section>
+      </div>
+
+    </main>
+  </div>
+  <script src="../../js/admin/adminspace.js"></script>
+  <script src="../../js/logout.js"></script>
+  <script src="../../js/admin/admin-dashboard.js"></script>
+  <script src="../../js/admin/admin-hero.js"></script>
+
+</body>
+
+</html>
