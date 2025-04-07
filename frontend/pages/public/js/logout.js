@@ -1,4 +1,4 @@
 function logout() {
     localStorage.clear();
-    window.location.href = '../public/login.html';
+    window.location.href = '../login.html';
   }
