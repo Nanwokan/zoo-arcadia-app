@@ -22,11 +22,11 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
       // Redirection selon le rôle
       const role = data.utilisateur.role_id;
       if (role === 1) {
-        window.location.href = '../admin/admin.html';
+        window.location.href = './admin/admin.html';
       } else if (role === 2) {
-        window.location.href = '../employe/employe.html';
+        window.location.href = './employe/employe.html';
       } else if (role === 3) {
-        window.location.href = '../veto/veterinaire.html';
+        window.location.href = './veto/veterinaire.html';
       } else {
         alert("Rôle non reconnu.");
       }
