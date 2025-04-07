@@ -1,6 +1,6 @@
 /* Fond général */
 main {
-    background: url('../assets/image/hero/fond.png') no-repeat center/cover;
+    background: url('../../../assets/image/hero/fond.png') no-repeat center/cover;
     min-height: 90vh;
     display: flex;
     align-items: center;
