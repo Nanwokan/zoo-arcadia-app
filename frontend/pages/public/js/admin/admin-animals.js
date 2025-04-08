@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // === CHARGEMENT DONNÉES ===
 
 function loadHabitats() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/habitats")
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/habitats")
     .then(res => res.json())
     .then(habitats => {
       const select = document.getElementById("habitatChoice");
@@ -42,7 +42,7 @@ function loadHabitats() {
 }
 
 function loadRaces() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/races")
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/races")
     .then(res => res.json())
     .then(races => {
       const select = document.getElementById("raceChoice");
@@ -56,7 +56,7 @@ function loadRaces() {
 }
 
 function loadAnimals() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/animals", {
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/animals", {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -73,7 +73,7 @@ function createRace() {
   const label = document.getElementById("newRace").value.trim();
   if (!label) return alert("Veuillez saisir un nom de race.");
 
-  fetch("https://zoo-arcadia-back.onrender.com/api/races", {
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/races", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -117,8 +117,8 @@ async function handleAnimalSubmit(e) {
   formData.append("race_id", race_id);
 
   const url = currentAnimalId
-    ? `https://zoo-arcadia-back.onrender.com/api/animals/${currentAnimalId}`
-    : "https://zoo-arcadia-back.onrender.com/api/animals";
+    ? `https://zoo-arcadia-app-production.up.railway.app/api/animals/${currentAnimalId}`
+    : "https://zoo-arcadia-app-production.up.railway.app/api/animals";
 
   const method = currentAnimalId ? "PUT" : "POST";
 
@@ -140,7 +140,7 @@ async function handleAnimalSubmit(e) {
       const imgForm = new FormData();
       selectedFiles.forEach(file => imgForm.append("images", file));
 
-      const resImg = await fetch(`https://zoo-arcadia-back.onrender.com/api/animals/${animal.id}/images`, {
+      const resImg = await fetch(`https://zoo-arcadia-app-production.up.railway.app/api/animals/${animal.id}/images`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: imgForm
@@ -232,7 +232,7 @@ function editAnimal(animal) {
   document.querySelector("#addAnimalForm button").textContent = "Mettre à jour";
   currentAnimalId = animal.id;
 
-  fetch(`https://zoo-arcadia-back.onrender.com/api/animals/${animal.id}/images`, {
+  fetch(`https://zoo-arcadia-app-production.up.railway.app/api/animals/${animal.id}/images`, {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -261,7 +261,7 @@ function editAnimal(animal) {
 
 function deleteAnimal(id) {
   if (confirm("Supprimer cet animal ?")) {
-    fetch(`https://zoo-arcadia-back.onrender.com/api/animals/${id}`, {
+    fetch(`https://zoo-arcadia-app-production.up.railway.app/api/animals/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -282,7 +282,7 @@ function deleteAnimal(id) {
 
 function deleteAnimalImage(id, button) {
   if (confirm("Supprimer cette image ?")) {
-    fetch(`https://zoo-arcadia-back.onrender.com/api/animals/images/${id}`, {
+    fetch(`https://zoo-arcadia-app-production.up.railway.app/api/animals/images/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` }
     })

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // --- HERO dynamique ---
   function fetchHero() {
-    fetch('https://zoo-arcadia-back.onrender.com/api/hero')
+    fetch('https://zoo-arcadia-app-production.up.railway.app/api/hero')
       .then(res => res.json())
       .then(hero => {
         const heroSection = document.querySelector('.hero');
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // --- HÉBERGEMENTS ---
   function fetchHabitat() {
-    fetch("https://zoo-arcadia-back.onrender.com/api/habitats")
+    fetch("https://zoo-arcadia-app-production.up.railway.app/api/habitats")
       .then(res => res.json())
       .then(habitats => {
         const container = document.getElementById("habitatContainer");
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // --- SERVICES ---
   function fetchServices() {
-    fetch("https://zoo-arcadia-back.onrender.com/api/services")
+    fetch("https://zoo-arcadia-app-production.up.railway.app/api/services")
       .then(res => res.json())
       .then(services => {
         const container = document.getElementById("serviceContainer");
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalSlides = 0;
   
   function loadAvis() {
-    fetch("https://zoo-arcadia-back.onrender.com/api/avis/valides")
+    fetch("https://zoo-arcadia-app-production.up.railway.app/api/avis/valides")
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById("avisContainer");
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const nom = document.getElementById("nom").value;
       const avis_text = document.getElementById("avis_text").value;
   
-      fetch("https://zoo-arcadia-back.onrender.com/api/avis", {
+      fetch("https://zoo-arcadia-app-production.up.railway.app/api/avis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nom, prenom, avis_text })

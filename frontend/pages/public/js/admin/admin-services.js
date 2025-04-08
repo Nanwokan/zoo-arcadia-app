@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadServices() {
-  fetch('https://zoo-arcadia-back.onrender.com/api/services', {
+  fetch('https://zoo-arcadia-app-production.up.railway.app/api/services', {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -39,7 +39,7 @@ function loadServices() {
 
 function deleteService(id) {
   if (confirm('Voulez-vous vraiment supprimer ce service ?')) {
-    fetch(`https://zoo-arcadia-back.onrender.com/api/services/${id}`, {
+    fetch(`https://zoo-arcadia-app-production.up.railway.app/api/services/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -67,8 +67,8 @@ function handleFormSubmit(e) {
   if (image) formData.append('image', image);
 
   const url = currentServiceId
-    ? `https://zoo-arcadia-back.onrender.com/api/services/${currentServiceId}`
-    : 'https://zoo-arcadia-back.onrender.com/api/services';
+    ? `https://zoo-arcadia-app-production.up.railway.app/api/services/${currentServiceId}`
+    : 'https://zoo-arcadia-app-production.up.railway.app/api/services';
 
   const method = currentServiceId ? 'PUT' : 'POST';
 

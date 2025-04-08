@@ -37,7 +37,7 @@ links.forEach(link => {
 
 // --- Gestion des Avis ---
 function loadAvisValidés() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/avis/valides")
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/avis/valides")
     .then((res) => res.json())
     .then((data) => {
       const container = document.getElementById("avis-valides");
@@ -76,7 +76,7 @@ function loadAvisValidés() {
 
 
 function loadAvisAttente() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/avis/en-attente", {
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/avis/en-attente", {
     headers: { Authorization: `Bearer ${token}` },
   })
     .then((res) => res.json())
@@ -119,7 +119,7 @@ function loadAvisAttente() {
 
 
 function validerAvis(id) {
-  fetch(`https://zoo-arcadia-back.onrender.com/api/avis/${id}/valider`, {
+  fetch(`https://zoo-arcadia-app-production.up.railway.app/api/avis/${id}/valider`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -133,7 +133,7 @@ function validerAvis(id) {
 }
 
 function supprimerAvis(id) {
-  fetch(`https://zoo-arcadia-back.onrender.com/api/avis/${id}`, {
+  fetch(`https://zoo-arcadia-app-production.up.railway.app/api/avis/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -168,7 +168,7 @@ function cancelEdit() {
 
 
 function loadServices() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/services", {
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/services", {
     headers: {
       Authorization: `Bearer ${token}`,
     }
@@ -207,7 +207,7 @@ editForm.addEventListener("submit", (e) => {
   const image = document.getElementById("image").files[0];
   if (image) formData.append("file", image);
 
-  fetch(`https://zoo-arcadia-back.onrender.com/api/services/${serviceIdToEdit}`, {
+  fetch(`https://zoo-arcadia-app-production.up.railway.app/api/services/${serviceIdToEdit}`, {
     method: "PUT",
     headers: { Authorization: `Bearer ${token}` },
     body: formData

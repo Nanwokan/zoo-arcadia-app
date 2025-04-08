@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadRoles() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/roles", {
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/roles", {
     headers: { Authorization: `Bearer ${token}` },
   })
     .then((res) => res.json())
@@ -49,7 +49,7 @@ function populateRoleFilter(data) {
 }
 
 function loadUsers() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/utilisateurs", {
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/utilisateurs", {
     headers: { Authorization: `Bearer ${token}` },
   })
     .then((res) => res.json())
@@ -119,7 +119,7 @@ function editPassword(id) {
   const nouveauMotDePasse = prompt("Entrez le nouveau mot de passe :");
 
   if (nouveauMotDePasse) {
-    fetch(`https://zoo-arcadia-back.onrender.com/api/utilisateurs/${id}/password`, {
+    fetch(`https://zoo-arcadia-app-production.up.railway.app/api/utilisateurs/${id}/password`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -140,7 +140,7 @@ function editPassword(id) {
 
 function deleteUser(id) {
   if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
-    fetch(`https://zoo-arcadia-back.onrender.com/api/utilisateurs/${id}`, {
+    fetch(`https://zoo-arcadia-app-production.up.railway.app/api/utilisateurs/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -187,8 +187,8 @@ async function handleUserSubmit(e) {
   if (photo) formData.append("photo", photo);
 
   const url = currentUserId
-    ? `https://zoo-arcadia-back.onrender.com/api/utilisateurs/${currentUserId}`
-    : `https://zoo-arcadia-back.onrender.com/api/utilisateurs`;
+    ? `https://zoo-arcadia-app-production.up.railway.app/api/utilisateurs/${currentUserId}`
+    : `https://zoo-arcadia-app-production.up.railway.app/api/utilisateurs`;
 
   const method = currentUserId ? "PUT" : "POST";
 

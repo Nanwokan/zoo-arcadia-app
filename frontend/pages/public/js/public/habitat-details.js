@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchHabitats() {
         try {
-            const res = await fetch('https://zoo-arcadia-back.onrender.com/api/habitats');
+            const res = await fetch('https://zoo-arcadia-app-production.up.railway.app/api/habitats');
             const habitats = await res.json();
 
             // Remplir le select
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchAnimals(habitatId) {
         try {
-            const res = await fetch('https://zoo-arcadia-back.onrender.com/api/animals');
+            const res = await fetch('https://zoo-arcadia-app-production.up.railway.app/api/animals');
             const allAnimals = await res.json();
             const animaux = allAnimals.filter(a => a.habitat_id == habitatId);
             console.log("Animaux chargés :", animaux);
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // clic sur bouton = vue + redirection
                 card.querySelector('button').addEventListener('click', () => {
-                    fetch(`https://zoo-arcadia-back.onrender.com/api/statistiques/increment/${animal.id}`, {
+                    fetch(`https://zoo-arcadia-app-production.up.railway.app/api/statistiques/increment/${animal.id}`, {
                         method: 'POST',
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ nom: animal.prenom })
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchRapports(animalId) {
         try {
-            const res = await fetch(`https://zoo-arcadia-back.onrender.com/api/rapports-veterinaires/${animalId}`);
+            const res = await fetch(`https://zoo-arcadia-app-production.up.railway.app/api/rapports-veterinaires/${animalId}`);
             return await res.json();
         } catch (err) {
             console.error("Erreur chargement rapports :", err);

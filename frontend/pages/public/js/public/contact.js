@@ -9,7 +9,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     };
   
     try {
-      const res = await fetch("https://zoo-arcadia-back.onrender.com/api/contact", {
+      const res = await fetch("https://zoo-arcadia-app-production.up.railway.app/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

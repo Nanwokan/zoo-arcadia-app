@@ -23,7 +23,7 @@ links.forEach(link => {
 });
 
 // Charger la liste des animaux
-fetch('https://zoo-arcadia-back.onrender.com/api/animals')
+fetch('https://zoo-arcadia-app-production.up.railway.app/api/animals')
 .then(res => res.json())
 .then(animals => {
   const select = document.getElementById('animalChoice');
@@ -51,7 +51,7 @@ const data = {
 };
 
 try {
-  const res = await fetch('https://zoo-arcadia-back.onrender.com/api/rapports-veterinaires', {
+  const res = await fetch('https://zoo-arcadia-app-production.up.railway.app/api/rapports-veterinaires', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ try {
 let rapportsOriginaux = [];
 
 function loadHistoriqueRapports() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/rapports-veterinaires", {
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/rapports-veterinaires", {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -149,7 +149,7 @@ document.getElementById("clearSearchReport").addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", loadHistoriqueRapports);
 
-fetch('https://zoo-arcadia-back.onrender.com/api/notifications-veto', {
+fetch('https://zoo-arcadia-app-production.up.railway.app/api/notifications-veto', {
   headers: {
     Authorization: `Bearer ${token}`
   }

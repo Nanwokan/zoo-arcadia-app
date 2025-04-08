@@ -1,4 +1,4 @@
-fetch('https://zoo-arcadia-back.onrender.com/api/services')
+fetch('https://zoo-arcadia-app-production.up.railway.app/api/services')
   .then(res => res.json())
   .then(data => {
     const container = document.querySelector('.services-list');

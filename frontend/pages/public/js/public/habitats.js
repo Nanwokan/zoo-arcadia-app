@@ -1,4 +1,4 @@
-fetch('https://zoo-arcadia-back.onrender.com/api/habitats')
+fetch('https://zoo-arcadia-app-production.up.railway.app/api/habitats')
   .then(res => res.json())
   .then(data => {
     const container = document.querySelector('.habitats-list');

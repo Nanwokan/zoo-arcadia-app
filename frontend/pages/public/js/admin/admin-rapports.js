@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchRapports() {
         const token = localStorage.getItem("token");
         try {
-            const response = await fetch('https://zoo-arcadia-back.onrender.com/api/rapports-veterinaires', {
+            const response = await fetch('https://zoo-arcadia-app-production.up.railway.app/api/rapports-veterinaires', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

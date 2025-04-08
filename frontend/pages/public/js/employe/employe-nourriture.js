@@ -15,7 +15,7 @@ function formatDate(mysqlDate) {
 }
 
 if (!token || !utilisateur || utilisateur.role_id !== 2) {
-    window.location.href = 'login.html';
+    window.location.href = '../login.html';
 } else {
     document.getElementById('userInfo').innerHTML = `
     <img src="${utilisateur.photo_profil_url}" alt="Photo" class="avatar-admin">
@@ -77,7 +77,7 @@ function applyFilters() {
 
 // Chargement des animaux
 function loadAnimaux() {
-    fetch('https://zoo-arcadia-back.onrender.com/api/animals', {
+    fetch('https://zoo-arcadia-app-production.up.railway.app/api/animals', {
         headers: { Authorization: `Bearer ${token}` }
     })
         .then(res => res.json())
@@ -147,7 +147,7 @@ if (foodForm) {
         };
 
         try {
-            const res = await fetch('https://zoo-arcadia-back.onrender.com/api/food-log', {
+            const res = await fetch('https://zoo-arcadia-app-production.up.railway.app/api/food-log', {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -181,7 +181,7 @@ if (foodForm) {
 }
 
 function loadHistoriqueNourriture() {
-    fetch('https://zoo-arcadia-back.onrender.com/api/food-logs', {
+    fetch('https://zoo-arcadia-app-production.up.railway.app/api/food-logs', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())

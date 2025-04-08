@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let consoData = [];
   
     // Charger la liste des animaux
-    fetch("https://zoo-arcadia-back.onrender.com/api/animals", {
+    fetch("https://zoo-arcadia-app-production.up.railway.app/api/animals", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
   
-      fetch(`https://zoo-arcadia-back.onrender.com/api/food-log/${animalId}`, {
+      fetch(`https://zoo-arcadia-app-production.up.railway.app/api/food-log/${animalId}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())

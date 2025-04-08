@@ -1,5 +1,5 @@
 export function incrementAnimalView(animalId, animalPrenom) {
-    fetch(`https://zoo-arcadia-back.onrender.com/api/statistiques/increment/${animalId}`, {
+    fetch(`https://zoo-arcadia-app-production.up.railway.app/api/statistiques/increment/${animalId}`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"

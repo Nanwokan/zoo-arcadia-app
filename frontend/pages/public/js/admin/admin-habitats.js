@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadHabitats() {
-  fetch("https://zoo-arcadia-back.onrender.com/api/habitats", {
+  fetch("https://zoo-arcadia-app-production.up.railway.app/api/habitats", {
     headers: { Authorization: `Bearer ${token}` },
   })
     .then((res) => res.json())
@@ -49,7 +49,7 @@ function editHabitat(habitat) {
 
 function deleteHabitat(id) {
   if (confirm("Voulez-vous vraiment supprimer cet habitat ?")) {
-    fetch(`https://zoo-arcadia-back.onrender.com/api/habitats/${id}`, {
+    fetch(`https://zoo-arcadia-app-production.up.railway.app/api/habitats/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -83,8 +83,8 @@ async function handleHabitatSubmit(e) {
   if (image) formData.append("image", image);
 
   const url = currentHabitatId
-    ? `https://zoo-arcadia-back.onrender.com/api/habitats/${currentHabitatId}`
-    : "https://zoo-arcadia-back.onrender.com/api/habitats";
+    ? `https://zoo-arcadia-app-production.up.railway.app/api/habitats/${currentHabitatId}`
+    : "https://zoo-arcadia-app-production.up.railway.app/api/habitats";
 
   const method = currentHabitatId ? "PUT" : "POST";
 
