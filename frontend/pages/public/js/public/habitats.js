@@ -1,4 +1,4 @@
-fetch('http://localhost:2024/api/habitats')
+fetch('https://zoo-arcadia-back.onrender.com/api/habitats')
   .then(res => res.json())
   .then(data => {
     const container = document.querySelector('.habitats-list');

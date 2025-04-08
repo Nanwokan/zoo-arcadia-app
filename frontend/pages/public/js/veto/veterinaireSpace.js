@@ -2,7 +2,7 @@ const token = localStorage.getItem('token');
 const utilisateur = JSON.parse(localStorage.getItem('utilisateur'));
 
 if (!token || !utilisateur || utilisateur.role_id !== 3) {
-  window.location.href = 'login.html';
+  window.location.href = '../login.html';
 } else {
   document.getElementById('userInfo').innerHTML = `
 <img src="${utilisateur.photo_profil_url}" alt="Photo" class="avatar-admin">
@@ -23,7 +23,7 @@ links.forEach(link => {
 });
 
 // Charger la liste des animaux
-fetch('http://localhost:2024/api/animals')
+fetch('https://zoo-arcadia-back.onrender.com/api/animals')
 .then(res => res.json())
 .then(animals => {
   const select = document.getElementById('animalChoice');
@@ -51,7 +51,7 @@ const data = {
 };
 
 try {
-  const res = await fetch('http://localhost:2024/api/rapports-veterinaires', {
+  const res = await fetch('https://zoo-arcadia-back.onrender.com/api/rapports-veterinaires', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ try {
 let rapportsOriginaux = [];
 
 function loadHistoriqueRapports() {
-  fetch("http://localhost:2024/api/rapports-veterinaires", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/rapports-veterinaires", {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -149,7 +149,7 @@ document.getElementById("clearSearchReport").addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", loadHistoriqueRapports);
 
-fetch('http://localhost:2024/api/notifications-veto', {
+fetch('https://zoo-arcadia-back.onrender.com/api/notifications-veto', {
   headers: {
     Authorization: `Bearer ${token}`
   }

@@ -77,7 +77,7 @@ function applyFilters() {
 
 // Chargement des animaux
 function loadAnimaux() {
-    fetch('http://localhost:2024/api/animals', {
+    fetch('https://zoo-arcadia-back.onrender.com/api/animals', {
         headers: { Authorization: `Bearer ${token}` }
     })
         .then(res => res.json())
@@ -147,7 +147,7 @@ if (foodForm) {
         };
 
         try {
-            const res = await fetch('http://localhost:2024/api/food-log', {
+            const res = await fetch('https://zoo-arcadia-back.onrender.com/api/food-log', {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -181,7 +181,7 @@ if (foodForm) {
 }
 
 function loadHistoriqueNourriture() {
-    fetch('http://localhost:2024/api/food-logs', {
+    fetch('https://zoo-arcadia-back.onrender.com/api/food-logs', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())

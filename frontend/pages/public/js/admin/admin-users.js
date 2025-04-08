@@ -2,7 +2,7 @@ let currentUserId = null;
 let allUsers = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (!token) return (window.location.href = "login.html");
+  if (!token) return (window.location.href = "../login.html");
 
   loadRoles();
   loadUsers();
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadRoles() {
-  fetch("http://localhost:2024/api/roles", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/roles", {
     headers: { Authorization: `Bearer ${token}` },
   })
     .then((res) => res.json())
@@ -49,7 +49,7 @@ function populateRoleFilter(data) {
 }
 
 function loadUsers() {
-  fetch("http://localhost:2024/api/utilisateurs", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/utilisateurs", {
     headers: { Authorization: `Bearer ${token}` },
   })
     .then((res) => res.json())
@@ -119,7 +119,7 @@ function editPassword(id) {
   const nouveauMotDePasse = prompt("Entrez le nouveau mot de passe :");
 
   if (nouveauMotDePasse) {
-    fetch(`http://localhost:2024/api/utilisateurs/${id}/password`, {
+    fetch(`https://zoo-arcadia-back.onrender.com/api/utilisateurs/${id}/password`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -140,7 +140,7 @@ function editPassword(id) {
 
 function deleteUser(id) {
   if (confirm("Voulez-vous vraiment supprimer cet utilisateur ?")) {
-    fetch(`http://localhost:2024/api/utilisateurs/${id}`, {
+    fetch(`https://zoo-arcadia-back.onrender.com/api/utilisateurs/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -187,8 +187,8 @@ async function handleUserSubmit(e) {
   if (photo) formData.append("photo", photo);
 
   const url = currentUserId
-    ? `http://localhost:2024/api/utilisateurs/${currentUserId}`
-    : `http://localhost:2024/api/utilisateurs`;
+    ? `https://zoo-arcadia-back.onrender.com/api/utilisateurs/${currentUserId}`
+    : `https://zoo-arcadia-back.onrender.com/api/utilisateurs`;
 
   const method = currentUserId ? "PUT" : "POST";
 

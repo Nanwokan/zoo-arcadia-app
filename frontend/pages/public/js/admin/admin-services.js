@@ -2,7 +2,7 @@
 let currentServiceId = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (!token) return window.location.href = "login.html";
+  if (!token) return window.location.href = "../login.html";
 
   loadServices();
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadServices() {
-  fetch('http://localhost:2024/api/services', {
+  fetch('https://zoo-arcadia-back.onrender.com/api/services', {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -39,7 +39,7 @@ function loadServices() {
 
 function deleteService(id) {
   if (confirm('Voulez-vous vraiment supprimer ce service ?')) {
-    fetch(`http://localhost:2024/api/services/${id}`, {
+    fetch(`https://zoo-arcadia-back.onrender.com/api/services/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -67,8 +67,8 @@ function handleFormSubmit(e) {
   if (image) formData.append('image', image);
 
   const url = currentServiceId
-    ? `http://localhost:2024/api/services/${currentServiceId}`
-    : 'http://localhost:2024/api/services';
+    ? `https://zoo-arcadia-back.onrender.com/api/services/${currentServiceId}`
+    : 'https://zoo-arcadia-back.onrender.com/api/services';
 
   const method = currentServiceId ? 'PUT' : 'POST';
 

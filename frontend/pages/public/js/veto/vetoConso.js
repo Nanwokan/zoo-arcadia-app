@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
   
     if (!token || !utilisateur || utilisateur.role_id !== 3) {
-      window.location.href = "login.html";
+      window.location.href = "../login.html";
       return;
     }
   
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let consoData = [];
   
     // Charger la liste des animaux
-    fetch("http://localhost:2024/api/animals", {
+    fetch("https://zoo-arcadia-back.onrender.com/api/animals", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
   
-      fetch(`http://localhost:2024/api/food-log/${animalId}`, {
+      fetch(`https://zoo-arcadia-back.onrender.com/api/food-log/${animalId}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())

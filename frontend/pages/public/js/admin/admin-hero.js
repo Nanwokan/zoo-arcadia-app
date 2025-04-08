@@ -8,7 +8,7 @@ function openHeroModal(hero) {
   document.getElementById("heroDesc").value = hero.description;
 }
 
-fetch('http://localhost:2024/api/hero')
+fetch('https://zoo-arcadia-back.onrender.com/api/hero')
   .then(res => res.json())
   .then(hero => {
     const container = document.querySelector('.hero-card');
@@ -48,7 +48,7 @@ document.getElementById('heroForm').addEventListener('submit', async (e) => {
   const token = localStorage.getItem('token');
 
   try {
-    await fetch('http://localhost:2024/api/hero', {
+    await fetch('https://zoo-arcadia-back.onrender.com/api/hero', {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${token}`

@@ -1,4 +1,4 @@
-fetch('http://localhost:2024/api/services')
+fetch('https://zoo-arcadia-back.onrender.com/api/services')
   .then(res => res.json())
   .then(data => {
     const container = document.querySelector('.services-list');

@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // === 1. Récupérer tous les animaux et chercher celui concerné
-        const resAnimal = await fetch(`http://localhost:2024/api/animals`);
+        const resAnimal = await fetch(`https://zoo-arcadia-back.onrender.com/api/animals`);
         const animaux = await resAnimal.json();
         const animal = animaux.find(a => a.id == animalId);
         if (!animal) return animalName.textContent = "Animal non trouvé";
 
         // ✅ Incrémenter la vue seulement si l’animal existe
-        await fetch(`http://localhost:2024/api/statistiques/increment/${animal.id}`, {
+        await fetch(`https://zoo-arcadia-back.onrender.com/api/statistiques/increment/${animal.id}`, {
 
             method: 'POST',
             headers: {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         animalHabitat.textContent = `Habitat : ${animal.habitat}`;
 
         // === 2. Images : toutes + galerie
-        const resImages = await fetch(`http://localhost:2024/api/animals/${animalId}/images`);
+        const resImages = await fetch(`https://zoo-arcadia-back.onrender.com/api/animals/${animalId}/images`);
         const images = await resImages.json();
 
         const main = images[0]?.url || "https://via.placeholder.com/500";
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         // === 3. Récupérer uniquement le dernier rapport
-        const resRapports = await fetch(`http://localhost:2024/api/public/rapports-veterinaires/${animalId}`);
+        const resRapports = await fetch(`https://zoo-arcadia-back.onrender.com/api/public/rapports-veterinaires/${animalId}`);
         const rapports = await resRapports.json();
 
         if (Array.isArray(rapports) && rapports.length > 0) {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
         // === 4. Statistiques MongoDB
-        const resVues = await fetch(`http://localhost:2024/api/consultations`);
+        const resVues = await fetch(`https://zoo-arcadia-back.onrender.com/api/consultations`);
         const stats = await resVues.json();
         const vue = stats.find(v => v.nom === animal.prenom);
         animalViews.textContent = `👁️ Consultations : ${vue?.vues || 0}`;

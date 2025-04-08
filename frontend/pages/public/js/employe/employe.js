@@ -37,7 +37,7 @@ links.forEach(link => {
 
 // --- Gestion des Avis ---
 function loadAvisValidés() {
-  fetch("http://localhost:2024/api/avis/valides")
+  fetch("https://zoo-arcadia-back.onrender.com/api/avis/valides")
     .then((res) => res.json())
     .then((data) => {
       const container = document.getElementById("avis-valides");
@@ -76,7 +76,7 @@ function loadAvisValidés() {
 
 
 function loadAvisAttente() {
-  fetch("http://localhost:2024/api/avis/en-attente", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/avis/en-attente", {
     headers: { Authorization: `Bearer ${token}` },
   })
     .then((res) => res.json())
@@ -119,7 +119,7 @@ function loadAvisAttente() {
 
 
 function validerAvis(id) {
-  fetch(`http://localhost:2024/api/avis/${id}/valider`, {
+  fetch(`https://zoo-arcadia-back.onrender.com/api/avis/${id}/valider`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -133,7 +133,7 @@ function validerAvis(id) {
 }
 
 function supprimerAvis(id) {
-  fetch(`http://localhost:2024/api/avis/${id}`, {
+  fetch(`https://zoo-arcadia-back.onrender.com/api/avis/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -168,7 +168,7 @@ function cancelEdit() {
 
 
 function loadServices() {
-  fetch("http://localhost:2024/api/services", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/services", {
     headers: {
       Authorization: `Bearer ${token}`,
     }
@@ -207,7 +207,7 @@ editForm.addEventListener("submit", (e) => {
   const image = document.getElementById("image").files[0];
   if (image) formData.append("file", image);
 
-  fetch(`http://localhost:2024/api/services/${serviceIdToEdit}`, {
+  fetch(`https://zoo-arcadia-back.onrender.com/api/services/${serviceIdToEdit}`, {
     method: "PUT",
     headers: { Authorization: `Bearer ${token}` },
     body: formData

@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   const mot_de_passe = document.getElementById('mot_de_passe').value;
 
   try {
-    const res = await fetch('http://localhost:2024/api/utilisateurs/login', {
+    const res = await fetch('https://zoo-arcadia-back.onrender.com/api/utilisateurs/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

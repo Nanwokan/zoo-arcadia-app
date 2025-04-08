@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const utilisateur = JSON.parse(localStorage.getItem("utilisateur"));
 
   if (!token || !utilisateur || utilisateur.role_id !== 3) {
-    window.location.href = "login.html";
+    window.location.href = "../login.html";
     return;
   }
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let commentairesOriginaux = [];
 
   function loadCommentaires() {
-    fetch('http://localhost:2024/api/commentaires-habitat', {
+    fetch('https://zoo-arcadia-back.onrender.com/api/commentaires-habitat', {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     })
       .then(res => res.json())
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   // Charger la liste des habitats
-  fetch("http://localhost:2024/api/habitats", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/habitats", {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:2024/api/habitats/${habitatId}/commentaires`, {
+      const res = await fetch(`https://zoo-arcadia-back.onrender.com/api/habitats/${habitatId}/commentaires`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // === 1. Charger les statistiques admin
   try {
-    const res = await fetch("http://localhost:2024/api/admin/stats", {
+    const res = await fetch("https://zoo-arcadia-back.onrender.com/api/admin/stats", {
       headers: { Authorization: `Bearer ${token}` }
     });
     const stats = await res.json();
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // === 2. Moyenne des consultations
-  fetch("http://localhost:2024/api/consultations")
+  fetch("https://zoo-arcadia-back.onrender.com/api/consultations")
     .then(res => res.json())
     .then(data => {
       const total = data.reduce((sum, a) => sum + a.vues, 0);
@@ -27,14 +27,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   // === 3. Nombre total de rapports
-  fetch("http://localhost:2024/api/rapports-veterinaires")
+  fetch("https://zoo-arcadia-back.onrender.com/api/rapports-veterinaires")
     .then(res => res.json())
     .then(data => {
       document.getElementById("totalRapports").textContent = data.length;
     });
 
   // === 4. Graphique consultations
-  fetch("http://localhost:2024/api/consultations")
+  fetch("https://zoo-arcadia-back.onrender.com/api/consultations")
     .then(res => res.json())
     .then(data => {
       const ctx = document.getElementById("viewsChart").getContext("2d");
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   // === 5. Graphique camembert animaux par habitat
-  fetch("http://localhost:2024/api/statistiques/animaux-par-habitat", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/statistiques/animaux-par-habitat", {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   // === 6. Charger tous les commentaires d’habitat
-  fetch("http://localhost:2024/api/commentaires-habitat", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/commentaires-habitat", {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // === 7. Horaires
   const form = document.getElementById("horaireForm");
-  fetch("http://localhost:2024/api/horaires", {
+  fetch("https://zoo-arcadia-back.onrender.com/api/horaires", {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     try {
-      const res = await fetch("http://localhost:2024/api/horaires", {
+      const res = await fetch("https://zoo-arcadia-back.onrender.com/api/horaires", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

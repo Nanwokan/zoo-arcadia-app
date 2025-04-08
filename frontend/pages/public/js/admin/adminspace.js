@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   if (!token || !utilisateur || utilisateur.role_id !== 1) {
-    return (window.location.href = 'login.html');
+    return (window.location.href = '../login.html');
   }
 
   // Remplir les infos de l'utilisateur connecté
