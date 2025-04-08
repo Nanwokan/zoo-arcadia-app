@@ -1,5 +1,5 @@
 const db = require('../../db').promise();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const loginUser = async (req, res, next) => {

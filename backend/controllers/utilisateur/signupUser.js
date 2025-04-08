@@ -1,5 +1,5 @@
 const db = require('../../db').promise(); // ← ajoute .promise()
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const sendMail = require('../../utils/sendMail');
 const cloudinary = require('../../config/cloudinary');
 const fs = require('fs');
