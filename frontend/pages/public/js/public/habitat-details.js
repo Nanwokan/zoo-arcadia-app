@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <h3>${animal.prenom}</h3>
             <p><strong>Race :</strong> ${animal.race}</p>
-            <p><strong>État :</strong> ${dernierRapport?.etat || "Non renseigné"}</p>
             <button data-id="${animal.id}" data-nom="${animal.prenom}">Voir fiche</button>
           `;
 

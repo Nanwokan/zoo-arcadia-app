@@ -3,18 +3,22 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion - Zoo Arcadia</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="/frontend/pages/public/css/style.css">
+  <link rel="stylesheet" href="/frontend/pages/public/css/login.css">
 </head>
 
 <body>
 
   <!-- HEADER -->
   <header class="header">
-    <div class="logo">🐾 Zoo Arcadia</div>
-    <nav class="navbar">
+    <div class="logo"><i class="fa-solid fa-paw"></i> Zoo Arcadia</div>
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>    
+    <nav class="navbar" id="navbar">
       <a href="index.html">Accueil</a>
       <a href="services.html">Services</a>
       <a href="habitats.html">Habitats</a>
@@ -87,7 +91,8 @@
       <p>© 2025 Zoo Arcadia. Tous droits réservés.</p>
     </div>
   </footer>
-  <script src="js/public/auth.js"></script>
+  <script src="/frontend/pages/public/js/public/auth.js"></script>
+  <script src="/frontend/pages/public/js/menuToggle.js"></script>
 </body>
 
 </html>

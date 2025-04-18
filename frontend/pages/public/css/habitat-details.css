@@ -1,47 +1,49 @@
 /* ===== Habitat Section ===== */
 .habitat-info {
-    padding: 2rem;
+  text-align: center;
+  padding: 2rem 1rem;
     background-color: #f0f8ff;
-    text-align: center;
   }
   
   .habitat-info h1 {
-    font-size: 2.5rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
     color: #0a4f77;
   }
   
   .habitat-info p {
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 0.9rem;
+    color: #555;
     max-width: 700px;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
+    text-align: justify;
   }
   
   #habitatSelect {
     padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid #0a4f77;
+    border: none;
     border-radius: 5px;
     margin-top: 1rem;
-    background-color: #fff;
+    color: #ffffff;
+    background-color: #0a4f77ad;
   }
   
   /* ===== Animal Cards ===== */
   .animal-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
     padding: 2rem;
   }
   
   .animal-card {
     background-color: #ffffff;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.2s;
-    width: 200px;
+    width: 150px;
   }
   
   .animal-card:hover {
@@ -50,34 +52,130 @@
   
   .animal-card img {
     width: 100%;
-    height: 200px;
+    height: 140px;
     max-width: 200px;
     object-fit: cover;
-    border-radius: 1rem;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
   }
   
   .animal-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     color: #0a4f77;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
   }
   
   .animal-card p {
+    padding: 0 6px ;
+    text-align: start;
+    font-size: 0.95rem;
     color: #444;
+    display: -webkit-box;
+  -webkit-line-clamp: 1; /* Nombre de lignes max */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   }
   
   .animal-card button {
-    margin-top: 0.7rem;
+    margin-top: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: #0a4f77;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   .animal-card button:hover {
     background-color: #0871a0;
   }
   
+/* ================================
+ RESPONSIVE DESKTOP
+================================= */
+
+@media (min-width: 1025px) {
+  /* ===== Habitat Section ===== */
+.habitat-info {
+  padding: 2rem;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+.habitat-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #0a4f77;
+}
+
+.habitat-info p {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+}
+
+#habitatSelect {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #0a4f77;
+  border-radius: 5px;
+  margin-top: 1rem;
+  background-color: #fff;
+}
+
+/* ===== Animal Cards ===== */
+.animal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.animal-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+  width: 200px;
+}
+
+.animal-card:hover {
+  transform: translateY(-5px);
+}
+
+.animal-card img {
+  width: 100%;
+  height: 200px;
+  max-width: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.animal-card h3 {
+  font-size: 1.2rem;
+  color: #0a4f77;
+  margin-bottom: 0.5rem;
+}
+
+.animal-card p {
+  color: #444;
+}
+
+.animal-card button {
+  margin-top: 0.7rem;
+  padding: 0.5rem 1rem;
+  background-color: #0a4f77;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.animal-card button:hover {
+  background-color: #0871a0;
+}
+}

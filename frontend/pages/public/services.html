@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Services - Zoo Arcadia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,28 +14,33 @@
 
     <!-- HEADER -->
     <header class="header">
-        <div class="logo">🐾 Zoo Arcadia</div>
-        <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-paw"></i> Zoo Arcadia</div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="navbar" id="navbar">
             <a href="index.html">Accueil</a>
-            <a href="services.html" class="active">Services</a>
+            <a href="services.html">Services</a>
             <a href="habitats.html">Habitats</a>
             <a href="contact.html">Contact</a>
             <a href="login.html" class="btn-login" id="btn-login">Connexion</a>
         </nav>
     </header>
-<main>
-    <!-- Titre principal -->
-    <section class="services-intro">
-        <h1><i class="fa-solid fa-bell-concierge" style="color: #FFC300; font-size: 45px;"></i> Tous nos services</h1>
-        <p>Profitez pleinement de votre visite grâce à l’ensemble des services mis à votre disposition au Zoo Arcadia.
-        </p>
-    </section>
+    <main>
+        <!-- Titre principal -->
+        <section class="services-intro">
+            <h1><i class="fa-solid fa-bell-concierge"></i> Tous nos services
+            </h1>
+            <p>Profitez pleinement de votre visite grâce à l’ensemble des services mis à votre disposition au Zoo
+                Arcadia.
+            </p>
+        </section>
 
-    <!-- Liste des services -->
-    <section class="services-list">
-        
-    </section>
-</main>
+        <!-- Liste des services -->
+        <section class="services-list">
+
+        </section>
+    </main>
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
@@ -80,7 +86,8 @@
             <p>© 2025 Zoo Arcadia. Tous droits réservés.</p>
         </div>
     </footer>
-    <script src="js/public/services.js"></script>
+    <script src="/frontend/pages/public/js/public/services.js"></script>
+    <script src="/frontend/pages/public/js/menuToggle.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 main {
     background: url('https://res.cloudinary.com/dxuxu6oig/image/upload/v1744064533/h7mjo8c9syrkwwzm9b20.png') no-repeat center/cover;
-    min-height: 90vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,19 +10,24 @@ main {
     background: rgba(255, 255, 255, 0.1); /* semi-transparent */
     backdrop-filter: blur(15px); /* flou */
     -webkit-backdrop-filter: blur(15px);
-    padding: 2rem 2.5rem;
-    border-radius: 20px;
+    padding: 1rem;
+    border-radius: 1rem;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    width: 100%;
+    width: 90%;
     color: white;
     text-align: center;
-    margin: 3rem auto;
+    margin: 2rem auto;
   }
   
   .contact-form-section form {
     display: flex;
     flex-direction: column;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
   }
   
   .contact-form-section label {
@@ -32,7 +37,7 @@ main {
   
   .contact-form-section input,
   .contact-form-section textarea {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     padding: 0.8rem;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -51,3 +56,26 @@ main {
   .contact-form-section button:hover {
     background-color: #005f49;
   }
+
+  /* ================================
+ RESPONSIVE DESKTOP
+================================= */
+
+@media (min-width: 1025px) { 
+  main {
+    min-height: 90vh;
+  }
+
+.contact-form-section {
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    margin: 3rem auto;
+  }
+
+  .contact-form-section input,
+  .contact-form-section textarea {
+    margin-bottom: 1rem;
+  }
+}

@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habitats - Zoo Arcadia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/habitats.css">
+    <link rel="stylesheet" href="/frontend/pages/public/css/style.css">
+    <link rel="stylesheet" href="/frontend/pages/public/css/habitats.css">
 </head>
 
 <body>
     <header class="header">
-        <div class="logo">🐾 Zoo Arcadia</div>
-        <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-paw"></i> Zoo Arcadia</div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav class="navbar" id="navbar">
             <a href="index.html">Accueil</a>
-            <a href="services.html" class="active">Services</a>
+            <a href="services.html">Services</a>
             <a href="habitats.html">Habitats</a>
             <a href="contact.html">Contact</a>
             <a href="login.html" class="btn-login" id="btn-login">Connexion</a>
@@ -25,10 +28,8 @@
     <main>
         <!-- Titre principal -->
         <section class="habitats-intro">
-            <h1><i class="fa-solid fa-igloo" style="color: #00d0ff; font-size: 45px;"></i> Tous nos habitats
-            </h1>
-            <p>
-            </p>
+            <h1><i class="fa-solid fa-igloo"></i> Tous nos habitats</h1>
+            <p></p>
         </section>
 
         <!-- Liste des habitats -->
@@ -82,7 +83,8 @@
         </div>
     </footer>
 
-    <script src="js/public/habitats.js"></script>
+    <script src="/frontend/pages/public/js/public/habitats.js"></script>
+    <script src="/frontend/pages/public/js/menuToggle.js"></script>
 </body>
 
 </html>
