@@ -1,4 +1,4 @@
-const db = require('../../db').promise(); // ← ajoute .promise()
+const db = require('../../db');
 const bcrypt = require('bcryptjs');
 
 const updatePassword = async (req, res, next) => {

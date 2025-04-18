@@ -1,4 +1,4 @@
-const db = require('../../db').promise();
+const db = require('../../db');
 
 const getAnimalsByHabitat = async (req, res) => {
   try {

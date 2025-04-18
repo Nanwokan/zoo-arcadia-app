@@ -1,4 +1,4 @@
-const db = require('../../db').promise();
+const db = require('../../db');
 
 const createFoodLog = async (req, res, next) => {
   const { animal_id, employe_id, nourriture, quantite, date_don, heure_don } = req.body;

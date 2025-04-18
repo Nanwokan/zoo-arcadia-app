@@ -1,4 +1,4 @@
-const db = require('../../db').promise();
+const db = require('../../db');
 
 const getAllAnimals = async (req, res, next) => {
   try {

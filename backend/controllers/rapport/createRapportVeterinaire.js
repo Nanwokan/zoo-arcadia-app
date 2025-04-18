@@ -1,5 +1,4 @@
-const db = require('../../db').promise();
-
+const db = require('../../db');
 
 const createRapportVeterinaire = async (req, res, next) => {
   const { animal_id, veterinaire_id, etat, nourriture, grammage, detail } = req.body;

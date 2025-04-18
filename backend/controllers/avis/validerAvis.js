@@ -1,4 +1,4 @@
-const db = require('../../db').promise();
+const db = require('../../db');
 
 const validerAvis = async (req, res, next) => {
   const id = req.params.id;

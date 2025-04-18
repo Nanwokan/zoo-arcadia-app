@@ -1,4 +1,3 @@
-// getAllPendingAvis.js
 const db = require('../../db');
 
 const getAllPendingAvis = (req, res) => {

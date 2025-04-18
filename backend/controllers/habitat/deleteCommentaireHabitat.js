@@ -1,4 +1,4 @@
-const db = require('../../db').promise();
+const db = require('../../db');
 
 const deleteCommentaireHabitat = async (req, res, next) => {
   const commentaireId = req.params.id;

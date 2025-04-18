@@ -1,4 +1,4 @@
-const db = require('../../db').promise();
+const db = require('../../db');
 const cloudinary = require('../../config/cloudinary');
 const fs = require('fs');
 

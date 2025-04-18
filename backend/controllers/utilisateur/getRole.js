@@ -1,4 +1,4 @@
-const db = require('../../db')
+const db = require('../../db');
 
 const getRole = (req,res) => {
     db.query(
