@@ -1,6 +1,6 @@
 const db = require('../../db');
 
-const getAllValidAvis = (req, res) => {
+const getAllValidAvis = async (req, res, next) => {
   const sql = `
     SELECT id, nom, prenom, avis_text, avatar_url, date_creation
     FROM avis
@@ -8,13 +8,12 @@ const getAllValidAvis = (req, res) => {
     ORDER BY date_creation DESC
   `;
 
-  db.query(sql, (err, result) => {
-    if (err) {
-      res.status(500).json({ message: 'Erreur serveur' });
-    } else {
-      res.status(200).json(result);
-    }
-  });
+  try {
+    const [avis] = await db.query(sql);
+    res.status(200).json(avis);
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports = getAllValidAvis;

@@ -1,16 +1,12 @@
 const db = require('../../db');
 
-const getRole = (req,res) => {
-    db.query(
-        'SELECT * FROM role',
-        (err, result) => {
-            if (err) {
-                res.status(500).json({ message: 'Erreur serveur' });
-              } else {
-                res.status(200).json(result);
-            }
-        }
-      );
-}
+const getRole = async (req, res, next) => {
+  try {
+    const [roles] = await db.query('SELECT * FROM role');
+    res.status(200).json(roles);
+  } catch (err) {
+    next(err);
+  }
+};
 
 module.exports = getRole;

@@ -40,8 +40,8 @@ const loginUser = async (req, res, next) => {
       token
     });
 
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   }
 };
 
