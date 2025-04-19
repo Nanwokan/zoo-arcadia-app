@@ -1,11 +1,9 @@
-.historique-rapports {
-    margin-top: 30px;
-  }
-  
+
   .rapport-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0.5rem;
+  margin-top: 0.5rem;
   }
   
   .rapport-card {
@@ -57,4 +55,12 @@
     font-size: 14px;
     line-height: 1.4;
   }
+
+@media (min-width:1025px) {
+  .historique-rapports {
+    margin-top: 30px;
+  }
+}
+
+  
   

@@ -7,12 +7,19 @@
   <title>Espace employé - Zoo Arcadia</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/employeSpace.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/employeSpace.css">
 </head>
 
 <body>
   <div class="dashboard">
+    <header class="mobile-header">
+      <div class="logo"><i class="fa-solid fa-paw"></i> Zoo Arcadia</div>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </header>
     <aside class="sidebar">
       <div class="sidebar-header">
         <h2><i class="fa-solid fa-paw"></i> Zoo Arcadia</h2>
@@ -67,8 +74,9 @@
     </main>
   </div>
 
-  <script src="../../js/employe/employe-nourriture.js"></script>
-  <script src="../../js/logout.js"></script>
+  <script src="../js/employe/employe-nourriture.js"></script>
+  <script src="../js/menuToggleUsers.js"></script>
+  <script src="../js/logout.js"></script>
 </body>
 
 </html>

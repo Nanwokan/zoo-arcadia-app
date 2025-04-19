@@ -6,33 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des animaux - Admin Zoo Arcadia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/dashboard.css">
-    <link rel="stylesheet" href="../../css/admin.css">
-    <link rel="stylesheet" href="../../css/upload.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/upload.css">
 </head>
 
 <body>
     <div class="dashboard">
-        <aside class="sidebar">
+        <header class="mobile-header">
+            <div class="logo"><i class="fa-solid fa-paw"></i> Zoo Arcadia</div>
+            <div class="menu-toggle" id="menuToggle">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </header>
+          <aside class="sidebar">
             <div class="sidebar-header">
-                <h2><i class="fa-solid fa-paw"></i> Zoo Arcadia</h2>
+              <h2><i class="fa-solid fa-paw"></i> Zoo Arcadia</h2>
             </div>
             <div class="user-info" id="userInfo">
             </div>
             <nav class="sidebar-nav">
-                <a href="admin.html"><i class="fa-solid fa-house fa-icon"></i> Tableau de bord</a>
-                <a href="admin-users.html"><i class="fa-solid fa-users fa-icon"></i> Utilisateurs</a>
-                <a href="admin-animals.html"><i class="fa-solid fa-hippo fa-icon"></i> Animaux</a>
-                <a href="admin-habitats.html"><i class="fa-solid fa-igloo fa-icon"></i> Habitats</a>
-                <a href="admin-services.html"><i class="fa-solid fa-bell-concierge fa-icon"></i> Services</a>
-                <a href="admin-rapports.html"><i class="fa-solid fa-shield-dog fa-icon"></i> Rapports vétos</a>
+              <a href="admin.html"><i class="fa-solid fa-house fa-icon"></i> Tableau de bord</a>
+              <a href="admin-users.html"><i class="fa-solid fa-users fa-icon"></i> Utilisateurs</a>
+              <a href="admin-animals.html"><i class="fa-solid fa-hippo fa-icon"></i> Animaux</a>
+              <a href="admin-habitats.html"><i class="fa-solid fa-igloo fa-icon"></i> Habitats</a>
+              <a href="admin-services.html"><i class="fa-solid fa-bell-concierge fa-icon"></i> Services</a>
+              <a href="admin-rapports.html"><i class="fa-solid fa-shield-dog fa-icon"></i> Rapports vétos</a>
             </nav>
             <div class="logout">
-                <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-icon"></i>Déconnexion</a>
+              <a onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket fa-icon"></i>Déconnexion</a>
             </div>
-        </aside>
-
+          </aside>
         <main class="main-content">
             <div class="headers">
                 <h1>Gestion des animaux</h1>
@@ -112,11 +117,12 @@
             </div>
         </main>
     </div>
-    <script src="../../js/admin/adminspace.js"></script>
-    <script src="../../js/logout.js"></script>
-    <script src="../../js/toggleformbtn.js"></script>
-    <script src="../../js/uploadManage.js"></script>
-    <script src="../../js/admin/admin-animals.js"></script>
+    <script src="../js/admin/adminspace.js"></script>
+    <script src="../js/menuToggleUsers.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/toggleformbtn.js"></script>
+    <script src="../js/uploadManage.js"></script>
+    <script src="../js/admin/admin-animals.js"></script>
 </body>
 
 </html>

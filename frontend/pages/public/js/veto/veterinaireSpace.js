@@ -148,39 +148,3 @@ document.getElementById("clearSearchReport").addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", loadHistoriqueRapports);
-
-fetch('https://zoo-arcadia-app-production.up.railway.app/api/notifications-veto', {
-  headers: {
-    Authorization: `Bearer ${token}`
-  }
-})
-.then(res => {
-  if (!res.ok) throw new Error("Erreur notifications");
-  return res.json();
-})
-.then(notifs => {
-  notifCount.textContent = notifs.length || 0;
-  notifDropdown.innerHTML = '';
-  notifs.forEach(n => {
-    const p = document.createElement('p');
-    p.textContent = `🔔 ${n.message}`;
-    notifDropdown.appendChild(p);
-  });
-})
-.catch(err => {
-  console.error("Erreur notifications :", err);
-  notifCount.textContent = 0;
-});
-
-// === Dropdown toggle
-notifBtn.addEventListener('click', () => {
-  notifDropdown.style.display = notifDropdown.style.display === 'block' ? 'none' : 'block';
-  messageDropdown.style.display = 'none';
-});
-
-// Fermer les dropdowns si clic extérieur
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.icon-wrapper')) {
-    notifDropdown.style.display = 'none';
-  }
-});

@@ -1,183 +1,134 @@
 /* dashboard.css */
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9fbfc;
-  color: #000;
-}
-
-.dashboard {
+.avis-section-container {
   display: flex;
-  min-height: 100vh;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 250px;
-  background-color: #004534;
-  display: flex;
+  gap: 0.5rem;
+  margin-top: 10px;
+  margin-bottom: 1rem;
   flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 1000;
 }
 
-.sidebar .sidebar-header {
-  font-weight: bold;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-bottom: 1px solid #195342;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-}
-
-.sidebar .user-info {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  font-weight: bold;
-  font-size: large;
-  color: #fff
-}
-
-.sidebar .user-info img {
-  width: 50px;
-  height: 50px;
-  border-radius: calc(infinity * 1px);
-  margin-right: 15px;
-}
-
-.sidebar nav a {
-  display: block;
-  padding: 15px 20px;
-  margin: 6px 0;
-  margin-left: 20px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.sidebar nav a:hover,
-.sidebar nav a.active {
-  background-color: #f9fbfc;
-  color: #000;
-  font-weight: 700;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-}
-
-.sidebar .logout {
-  padding: 10px;
-  color: #f9fbfc;
-  background-color: #ff1900;
-  cursor: pointer;
-  text-align: center;
-  font-weight: bolder;
-  position: absolute;
-  bottom: 0;
-  left: 38px;
-  width: 70%;
-  border-radius: 25px;
-  margin-bottom: 20px;
-}
-
-/* Main content */
-.main-content {
-  margin-left: 250px;
-  /* même taille que la sidebar */
-  padding: 0 30px;
+.avis-section-container section {
   flex: 1;
-  max-width: 100%;
-}
-
-
-.main-content header h2 {
-  margin: 0;
-}
-
-.main-content .welcome {
-  margin-bottom: 30px;
-}
-
-.headers {
-  background-color: white;
-  padding: 8px 30px;
-  font-size: 12px;
-  margin: 0 -30px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.headers button {
-  padding: 6px 8px;
-  margin: 0 8px;
-  font-size: 17px;
-  background-color: #004534;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 20px;
-}
-
-.admin-icons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.icon-wrapper {
-  position: relative;
-
-}
-
-
-.badge {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: red;
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 2px 6px;
-  border-radius: 50%;
-  line-height: 1;
-  min-width: 18px;
-  text-align: center;
-  box-shadow: 0 0 0 2px white;
-}
-
-
-.dropdown {
-  position: absolute;
-  right: 0;
-  top: 30px;
-  background: white;
-  border: 1px solid #ccc;
-  width: 250px;
-  max-height: 300px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  max-height: 20rem;
   overflow-y: auto;
-  display: none;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-.dropdown p {
-  margin: 0;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+.avis-section-container section >h3 {
+position: sticky;
+top: 0;
+background-color: white; /* ou la couleur de fond de ta section */
+z-index: 10;
+padding: 15px;
+font-size: 1.2rem;
+}
+
+/* Styles pour les avis visiteurs */
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 10px;
+  padding: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 0 10px 0.5rem 10px;
+}
+
+.avatar {
+  width: 40px;
+height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-content-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-content-head h3 {
+  margin: 0 10px ;
+  font-size: 1rem;
+  color: #333;
+}
+
+.card-content p {
   font-size: 0.9rem;
+  color: #555;
+  margin: 6px 0 0 0;
+  text-align: justify;
 }
 
-.dropdown p:last-child {
-  border-bottom: none;
+.card-content-head small {
+  color: #888;
+  font-size: 0.75rem;
 }
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.actions button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
+  color: #fff;
+  font-weight: 500;
+}
+
+.actions .valid {
+  background-color: rgb(0, 255, 21);
+}
+
+
+.actions .delete {
+  background-color: red;
+}
+
+.actions .valid:hover {
+  background-color: #ddd;
+}
+
+
+.actions .delete:hover {
+  background-color: #ddd;
+}
+
+.actions button:hover {
+  background-color: #ddd;
+}
+
+.rapport-grid {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.rapport-card {
+  background-color: #fff;
+  border-left: 5px solid #004534;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+@media (min-width:1025px) {
 
 .avis-section-container {
     display: flex;
@@ -248,7 +199,7 @@ body {
     margin: 8px 0;
   }
   
-  .card-content small {
+  .card-content-head small {
     color: #888;
     font-size: 0.8rem;
   }
@@ -476,3 +427,5 @@ body {
     border: none;
     font-size: 1rem;
   }
+}
+
