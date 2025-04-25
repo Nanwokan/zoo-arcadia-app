@@ -93,15 +93,6 @@ Gestion de Projet : [ClickUp](https://app.clickup.com/9015082414/v/s/90152702178
   └── db.js
   └── .env
 
-## 🛠️ Bonnes pratiques Git
-
-- Branche principale : `main`
-- Branche de développement : `dev`
-- Fonctionnalité : branches spécifiques (`feature/xxx`)
-- Merge après validation :
-  - `feature` -> `dev`
-  - `dev` -> `main` après test complet
-
 ## 🔐 Sécurité
 
 - Utilisation de `.env` pour stocker les informations sensibles
