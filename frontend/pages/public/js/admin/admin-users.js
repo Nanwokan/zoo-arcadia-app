@@ -210,7 +210,7 @@ async function handleUserSubmit(e) {
     alert(currentUserId ? "Utilisateur modifié ✅" : "Utilisateur créé ✅");
 
     form.reset();
-    document.getElementById("previewImage").src = "/frontend/assets/default-avatar.jpg";
+    document.getElementById("previewImage").src = "../../../assets/image/default-avatar.jpg";
     currentUserId = null;
     form.querySelector("button").textContent = "Bienvenue nouvel Arcadien !";
     window.location.reload();
