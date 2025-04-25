@@ -66,7 +66,7 @@ JWT_EXPIRES_IN=1d
 
 5. **Lancer le serveur back-end :**
 
-npm start
+node server.js
 
 6. **Accéder au front-end :**
 
