@@ -14,5 +14,10 @@ const pool = mysql.createPool({
   queueLimit: 0
 });
 
+pool.getConnection()
+  .then(() => console.log('Connexion DB réussie'))
+  .catch(err => console.error('❌ Connexion DB échouée :', err.message));
+
+
 // Exportation du pool avec support des promesses
 module.exports = pool.promise();
