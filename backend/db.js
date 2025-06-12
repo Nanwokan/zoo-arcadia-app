@@ -24,4 +24,3 @@ db.query('SELECT 1')
 
 // Export du pool promisifié
 module.exports = db;
-git 
